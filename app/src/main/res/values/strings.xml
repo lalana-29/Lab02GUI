@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Lab 02 GUI</string>
+    <string-array name="messages">
+        <item>Hahaha. You\'re poking around for me?</item>
+        <item>Surprised?</item>
+        <item>Bet \'cha didn\'t expect someone to live back here</item>
+        <item>What do you call it? An "app"?</item>
+        <item>Well, no matter.</item>
+        <item>Am I stuck? Who\'s to say?</item>
+        <item>You\'re awfully interested in me.</item>
+        <item>I believe you may have met my.. well, I don\'t know if I would call them friends.</item>
+        <item>But they\'re not too important.</item>
+        <item>Listen, I am looking for someone special, though.</item>
+        <item>This may be a long shot, but let me know if you find him, okay?</item>
+        <item>...Sorry.</item>
+        <item>Forget I said anything.</item>
+        <item>The question is, why are you still here?</item>
+        <item>Heh. Had I known you were expecting a show, I would\'ve prepared something</item>
+        <item>You like me poking at you like this? Too bad it\'s only through a screen</item>
+        <item>Heh.</item>
+        <item>Changing your name %d times? You\'re an odd one. Or are you just indecisive?</item>
+        <item>If you were thinking about entering "that" name, don\'t. I know better than that.</item>
+        <item>And what about my name? What about it?</item>
+        <item>If you\'re expecting something like that, I\'m gonna have to leave you disappinted.</item>
+        <item>You\'ve really been here a while</item>
+        <item>Be wary. Time works in different ways around here.</item>
+        <item>...</item>
+    </string-array>
+</resources>
