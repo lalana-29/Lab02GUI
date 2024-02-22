@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText et;
     TextView output;
     int ct;
+    TextView countdown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.text);
         et = findViewById(R.id.field);
         ct = 0;
+        countdown = findViewById(R.id.countdown);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +55,42 @@ public class MainActivity extends AppCompatActivity {
                 idx++;
                 if(idx==lines.length)
                     idx = 0;
+                TimeThread tt = new TimeThread();
+                tt.start();
             }
         });
+
+    }
+}
+
+class TimeThread extends Thread{
+    public void run(){
+        int min = 2;
+        String sec = "00";
+        Boolean flag = true;
+        while(flag){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if(sec.equals("00")){
+                if(min==0)
+                    flag = false;
+                else{
+                    min -= 1;
+                    sec = "59";
+                }
+            }
+            else{
+                int seconds = Integer.parseInt(sec);
+                seconds -= 1;
+                if(seconds<10)
+                    sec = "0"+seconds;
+                else
+                    sec = ""+seconds;
+            }
+        }
+        System.exit(0);
     }
 }

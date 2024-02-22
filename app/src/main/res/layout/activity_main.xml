@@ -52,4 +52,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:backgroundTint="#ff7721"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hmm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text=""
+        android:id="@+id/countdown"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
