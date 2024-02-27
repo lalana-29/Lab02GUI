@@ -3,6 +3,7 @@ package com.davisonalex.lab02gui;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 idx++;
                 if(idx==lines.length)
                     idx = 0;
-                TimeThread tt = new TimeThread();
+                TimeThread tt = new TimeThread(MainActivity.this);
                 tt.start();
             }
         });
@@ -64,10 +65,19 @@ public class MainActivity extends AppCompatActivity {
 }
 
 class TimeThread extends Thread{
+    private Activity act;
+    private int min;
+    private String sec;
+    public TimeThread(Activity view){
+        super();
+        act = view;
+    }
     public void run(){
-        int min = 2;
-        String sec = "00";
+        min = 2;
+        sec = "00";
         Boolean flag = true;
+        //tv.setText("2:00");
+
         while(flag){
             try {
                 Thread.sleep(1000);
@@ -83,6 +93,7 @@ class TimeThread extends Thread{
                 }
             }
             else{
+
                 int seconds = Integer.parseInt(sec);
                 seconds -= 1;
                 if(seconds<10)
@@ -90,6 +101,16 @@ class TimeThread extends Thread{
                 else
                     sec = ""+seconds;
             }
+            act.runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    TextView tv = act.findViewById(R.id.countdown);
+                    tv.setText(min+":"+sec);
+
+                }
+            });
+
         }
         System.exit(0);
     }
